@@ -35,3 +35,7 @@ def crear_usuario():
     db.session.commit()
 
     return jsonify({"id_usuario": u.id_usuario}), 201
+
+@bp.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({"msg": "pong desde backend actualizado"}), 200
