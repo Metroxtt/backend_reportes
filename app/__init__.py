@@ -13,6 +13,7 @@ def create_app():
     jwt.init_app(app)
 
     # Blueprints
+    from .routes.auth import bp as auth_bp
     from .routes.usuarios import bp as usuarios_bp
     from .routes.reportes import bp as reportes_bp
     from .routes.tipo_usuario import bp as tipo_usuario_bp
@@ -36,6 +37,8 @@ def create_app():
     app.register_blueprint(municipalidades_bp, url_prefix='/api/municipalidades')
     app.register_blueprint(asignaciones_bp, url_prefix='/api/asignaciones')
     app.register_blueprint(notificaciones_bp, url_prefix='/api/notificaciones')
+    app.register_blueprint(auth_bp, url_prefix='/api/auth')
+
 
 
 
